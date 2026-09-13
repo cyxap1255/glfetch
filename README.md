@@ -8,9 +8,16 @@ I'm in the process of learning C, and glfetch (Gentoo Linux fetch) was my first 
 
 
 # Installation
-$ git clone https://github.com/cyxap1255/glfetch
-$ cd glfetch
-$ make && sudo make install
+```bash
+git clone https://github.com/cyxap1255/glfetch
+cd glfetch
+make && sudo make install
+```
 
 # Usage
-$ glfetch
+```bash
+glfetch
+```
+
+# Credits
+Inspired by [pfetch](https://github.com/dylanaraps/pfetch).
