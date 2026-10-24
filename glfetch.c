@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
     	char *term = getenv("TERM");
     	char *shell = getenv("SHELL");
     	char *user = getenv("USER");
-	char hostname[256];
+		char hostname[256];
     	gethostname(hostname, sizeof(hostname));
     	struct utsname kernel;
     	uname(&kernel);
@@ -46,21 +46,21 @@ int main(int argc, char *argv[]) {
            	}
     	}
 
-	void uptime_plan9(long hours, long minutes) {
-		if (hours == 0) {
-			printf(DEFAULT_TEXT"   |   ° ¡  " KEY "  UPTIME: " DEFAULT_TEXT "%ldm\n", minutes);
-		} else {
-			printf(DEFAULT_TEXT"   |   ° ¡  " KEY "  UPTIME: " DEFAULT_TEXT "%ldh %ldm\n", hours, minutes);
+		void uptime_plan9(long hours, long minutes) {
+			if (hours == 0) {
+				printf(DEFAULT_TEXT"   |   ° ¡  " KEY "  UPTIME: " DEFAULT_TEXT "%ldm\n", minutes);
+			} else {
+				printf(DEFAULT_TEXT"   |   ° ¡  " KEY "  UPTIME: " DEFAULT_TEXT "%ldh %ldm\n", hours, minutes);
+			}
 		}
-	}
 
-	if (argc == 2 && strcmp(argv[1], "--help") == 0) {
-		printf("syntax: glfetch -l plan9/gentoo\n"
-		      "syntax help: glfetch --help\n");
-	}
+		if (argc == 2 && strcmp(argv[1], "--help") == 0) {
+			printf("syntax: glfetch -l plan9/gentoo\n"
+		      		"syntax help: glfetch --help\n");
+			}
 
-	if (argc == 3 && strcmp(argv[1], "-l") == 0 && strcmp(argv[2], "gentoo") == 0) {
-		printf(DEFAULT_TEXT"   _-----_     " DEFAULT_TEXT " %s@%s\n",                                   user, hostname);
+		if (argc == 3 && strcmp(argv[1], "-l") == 0 && strcmp(argv[2], "gentoo") == 0) {
+			printf(DEFAULT_TEXT"   _-----_     " DEFAULT_TEXT " %s@%s\n",                                   user, hostname);
     		printf(DEFAULT_TEXT"  (       \\   " KEY "  OS: " DEFAULT_TEXT "%s\n",                                  distro);
     		printf(DEFAULT_TEXT"  \\    0   \\ " KEY "   KERNEL: " DEFAULT_TEXT "%s %s\n",  kernel.sysname, kernel.release);
     		uptime_gentoo(hours, minutes);            
@@ -68,23 +68,23 @@ int main(int argc, char *argv[]) {
     		printf(DEFAULT_TEXT"  (     _-     " KEY " TERM: " DEFAULT_TEXT "%s\n",                                   term);
     		printf(DEFAULT_TEXT"  \\____-      " KEY "  MEMORY: " DEFAULT_TEXT "%ldMiB/%ldMiB\n",      used_ram, total_ram);
     		printf("                                                                                                   \n");
-	}
+		}
 	
-	if (argc == 3 && strcmp(argv[1], "-l") == 0 && strcmp(argv[2], "plan9") == 0) {
-		printf(DEFAULT_TEXT"    (\\(\\      " DEFAULT_TEXT "%s@%s\n",                                   user, hostname);
-		printf(DEFAULT_TEXT"   j'. ..   " KEY "  OS: " DEFAULT_TEXT "%s\n",                                  distro);
-		printf(DEFAULT_TEXT"   (  . .)  " KEY "  KERNEL: " DEFAULT_TEXT "%s %s\n",  kernel.sysname, kernel.release);
-		uptime_plan9(hours, minutes);
-		printf(DEFAULT_TEXT"   ¿     ;  " KEY "  SHELL: " DEFAULT_TEXT "%s\n",                                 shell);
-		printf(DEFAULT_TEXT"   c?'.UJ   " KEY "  TERM: " DEFAULT_TEXT "%s\n",                                   term);
-		printf(DEFAULT_TEXT"            " KEY "  MEMORY: "  DEFAULT_TEXT "%ldMiB/%ldMiB\n",      used_ram, total_ram);
-	}
+		if (argc == 3 && strcmp(argv[1], "-l") == 0 && strcmp(argv[2], "plan9") == 0) {
+			printf(DEFAULT_TEXT"    (\\(\\      " DEFAULT_TEXT "%s@%s\n",                                   user, hostname);
+			printf(DEFAULT_TEXT"   j'. ..   " KEY "  OS: " DEFAULT_TEXT "%s\n",                                  distro);
+			printf(DEFAULT_TEXT"   (  . .)  " KEY "  KERNEL: " DEFAULT_TEXT "%s %s\n",  kernel.sysname, kernel.release);
+			uptime_plan9(hours, minutes);
+			printf(DEFAULT_TEXT"   ¿     ;  " KEY "  SHELL: " DEFAULT_TEXT "%s\n",                                 shell);
+			printf(DEFAULT_TEXT"   c?'.UJ   " KEY "  TERM: " DEFAULT_TEXT "%s\n",                                   term);
+			printf(DEFAULT_TEXT"            " KEY "  MEMORY: "  DEFAULT_TEXT "%ldMiB/%ldMiB\n",      used_ram, total_ram);
+		}
 
-	if (argc == 3 && strcmp(argv[1], "-l") == 1) {
-		printf("syntax: glfetch -l plan9/gentoo\n");
-	}
+		if (argc == 3 && strcmp(argv[1], "-l") == 1) {
+			printf("syntax: glfetch -l plan9/gentoo\n");
+		}
 
-	if (argc < 2) {
-		printf("syntax: glfetch -l plan9/gentoo\n");
-	}
+		if (argc < 2) {
+			printf("syntax: glfetch -l plan9/gentoo\n");
+		}
 }
