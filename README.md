@@ -15,10 +15,18 @@ cd glfetch
 make && sudo make install
 ```
 
-# Usage
+# Uninstallation
+
 ```bash
-glfetch
+sudo make uninstall && sudo make clean
 ```
 
+# Usage
+```bash
+glfetch -l gentoo
+```
+```bash
+glfetch -l plan9
+```
 # Credits
 Inspired by [pfetch](https://github.com/dylanaraps/pfetch).
