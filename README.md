@@ -18,6 +18,7 @@ make && sudo make install
 # Uninstallation
 
 ```bash
+cd glfetch
 sudo make uninstall && sudo make clean
 ```
 
